@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import BookForm from './components/books/BookForm';
+import BookList from './components/books/BookList';
+import AuthContextProvider from './components/contexts/AuthContext';
+import BookContextProvider from './components/contexts/BookContext';
+import ThemeContextProvider from './components/contexts/ThemeContext';
+import Navbar from './components/ui/Navbar';
+import ThemeToggle from './components/ui/ThemeToggle';
+//import axios from 'axios';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ThemeContextProvider>
+        <AuthContextProvider>
+          <BookContextProvider>
+            <Navbar />
+            <BookList />
+            <BookForm />
+          </BookContextProvider>
+          <ThemeToggle />
+        </AuthContextProvider>
+      </ThemeContextProvider> 
     </div>
   );
 }
