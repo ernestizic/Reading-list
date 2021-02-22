@@ -13,6 +13,17 @@ class ThemeContextProvider extends Component {
          this.setState({ isLightTheme: !this.state.isLightTheme })
      }
 
+     /*
+     componentDidMount() {
+         localStorage.setItem("myTheme", this.state.isLightTheme)
+
+         const theme = localStorage.getItem("myTheme")
+         if (theme) {
+             this.setState({isLightTheme: JSON.parse(theme)})
+         }
+     }
+     */
+
     render() { 
         return ( 
             <ThemeContext.Provider value={{...this.state, toggleTheme: this.toggleTheme}}>
