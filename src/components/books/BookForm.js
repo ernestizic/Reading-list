@@ -16,7 +16,7 @@ const BookForm = () => {
         e.preventDefault();
         addBook(title, author);
         setTitle("");
-        setAuthor("");
+        setAuthor("");  
     }
 
     return ( 
